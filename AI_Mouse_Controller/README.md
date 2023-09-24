@@ -1,6 +1,6 @@
 # AI Mouse Controller
 
-The AI Mouse Controller is a Python-based application that allows you to control your mouse using voice commands. With this application, you can perform various mouse actions such as moving the mouse, clicking, and more, simply by speaking voice commands.
+The AI Mouse Controller is a Python-based application that allows you to control your mouse using voice commands. With this application, you can perform various mouse actions such as moving the mouse, clicking, scrolling, and more, simply by speaking voice commands.
 
 ## Installation
 
@@ -13,7 +13,7 @@ To install and run the AI Mouse Controller, follow these steps:
 
 2. Navigate to the 'AI_Mouse_Controller' directory:
    ```
-   cd AI-Mouse/AI_Mouse_Controller
+   cd AI_Mouse_Controller
    ```
 
 3. Install the required dependencies:
@@ -37,6 +37,7 @@ To use the AI Mouse Controller, follow these steps:
    - 'click': This command will perform a left click.
    - 'double click': This command will perform a double click.
    - 'right click': This command will perform a right click.
+   - 'scroll': This command will allow you to specify the number of clicks to scroll. You will be prompted to provide the number of clicks.
    - 'exit': This command will exit the application.
 
 ## License
