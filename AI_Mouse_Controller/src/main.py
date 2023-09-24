@@ -1,23 +1,24 @@
-
 import voice_recognition
 import mouse_control
 import learning_mode
 
 def main():
     while True:
-        command = voice_recognition.listen()
+        command = voice_recognition.VoiceRecognition().listen()
         if command == "start learning":
-            learning_mode.start()
+            learning_mode.LearningMode().record_mouse_movement()
+            learning_mode.LearningMode().train_model()
+            learning_mode.LearningMode().move_mouse()
         elif command == "stop learning":
-            learning_mode.stop()
+            break
         elif command == "move mouse":
-            mouse_control.move()
+            mouse_control.MouseController().move_mouse(100, 100)
         elif command == "click":
-            mouse_control.click()
+            mouse_control.MouseController().click()
         elif command == "double click":
-            mouse_control.double_click()
+            mouse_control.MouseController().double_click()
         elif command == "right click":
-            mouse_control.right_click()
+            mouse_control.MouseController().right_click()
         elif command == "exit":
             break
 

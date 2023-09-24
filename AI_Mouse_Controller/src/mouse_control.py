@@ -1,4 +1,3 @@
-
 import pyautogui
 
 class MouseController:
@@ -10,6 +9,12 @@ class MouseController:
 
     def click(self, button='left'):
         pyautogui.click(button=button)
+
+    def double_click(self):
+        pyautogui.doubleClick()
+
+    def right_click(self):
+        pyautogui.click(button='right')
 
     def scroll(self, clicks):
         pyautogui.scroll(clicks)

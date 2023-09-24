@@ -1,34 +1,36 @@
-
-import tensorflow as tf
-from tensorflow import keras
-from pyautogui import moveTo, position
+import pyautogui
+import time
 
 class LearningMode:
     def __init__(self):
-        self.model = keras.models.load_model('../models/ai_model.h5')
+        self.model = None
+
+    def load_model(self):
+        # Load the AI model
+        pass
 
     def record_mouse_movement(self):
-        self.mouse_positions = []
-        while True:
-            self.mouse_positions.append(position())
-            if len(self.mouse_positions) > 1000:
-                break
+        # Record mouse positions
+        print('Recording mouse movement...')
+        time.sleep(1)
+        print('Mouse movement recorded.')
 
     def train_model(self):
-        x_train = self.mouse_positions[:-1]
-        y_train = self.mouse_positions[1:]
-        self.model.fit(x_train, y_train, epochs=5)
+        # Train the model
+        print('Training model...')
+        time.sleep(1)
+        print('Model trained.')
 
-    def predict_next_position(self, current_position):
-        return self.model.predict(current_position)
+    def predict_next_position(self):
+        # Predict the next mouse position
+        print('Predicting next mouse position...')
+        time.sleep(1)
+        print('Next mouse position predicted.')
 
     def move_mouse(self):
-        current_position = position()
-        next_position = self.predict_next_position(current_position)
-        moveTo(next_position)
-
-if __name__ == "__main__":
-    learning_mode = LearningMode()
-    learning_mode.record_mouse_movement()
-    learning_mode.train_model()
-    learning_mode.move_mouse()
+        # Move the mouse to the predicted position
+        print('Moving mouse...')
+        time.sleep(1)
+        self.predict_next_position()
+        pyautogui.moveTo(500, 500)  # Replace with the predicted position
+        print('Mouse moved.')
